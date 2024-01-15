@@ -1,25 +1,39 @@
 {
-  "name": "sunstone-dashboard",
+  "name": "t-bot",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint:next": "next lint",
+    "lint": "npx @biomejs/biome lint ./src",
+    "check-types": "npx tsc --pretty --noEmit",
+    "format:check": "npx @biomejs/biome check ./src",
+    "format": "npx @biomejs/biome format --write ./src"
   },
   "dependencies": {
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@tremor/react": "^3.13.1",
+    "million": "^2.6.4",
+    "next": "14.0.4",
+    "next-auth": "^4.24.5",
+    "next-intl": "^3.4.2",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.4"
+    "react-icons": "^5.0.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@biomejs/biome": "1.5.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "clsx": "^2.1.0",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
   }
 }

@@ -1,0 +1,25 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.5.1/schema.json",
+	"organizeImports": {
+		"enabled": false
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"a11y":{
+				"useKeyWithClickEvents":"off"
+			}
+		},
+		"ignore": [".next"]
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"semicolons": "always"
+		}
+	},
+	"formatter": {
+		"ignore": [".next"]
+	}
+}
