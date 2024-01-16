@@ -1,11 +1,12 @@
 import { Metric, Subtitle } from '@tremor/react';
-const InsightPage = () => {
+
+const ReportsPage = async () => {
 	return (
 		<section>
-			<Metric>Insight</Metric>
+			<Metric>Reports</Metric>
 			<Subtitle>asdasdasdasdasdasdasdasd</Subtitle>
 		</section>
 	);
 };
 
-export default InsightPage;
+export default ReportsPage;

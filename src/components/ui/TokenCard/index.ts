@@ -1,1 +1,1 @@
-export { TokenCard } from './TokenCard'
+export { TokenCard } from './TokenCard';

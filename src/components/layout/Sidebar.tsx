@@ -8,6 +8,8 @@ import { LuLayers } from 'react-icons/lu';
 import { PiArrowsLeftRight } from 'react-icons/pi';
 import { BsBarChart } from 'react-icons/bs';
 import { PiChartPieSlice } from 'react-icons/pi';
+import { Router } from '@/configs/router.config';
+
 export const Sidebar: FC<SidebarPrps> = ({ className }) => {
 	const pathName = usePathname();
 	return (
@@ -16,50 +18,50 @@ export const Sidebar: FC<SidebarPrps> = ({ className }) => {
 				<ul className="flex flex-col gap-y-4 *:w-full *:rounded-lg *:p-3">
 					<li
 						className={cn({
-							'bg-white shadow-sm': pathName === '/',
+							'bg-white shadow-sm': pathName === Router.Home,
 						})}
 					>
-						<Link href={'/'} className="flex gap-5 items-center">
+						<Link href={Router.Home} className="flex gap-5 items-center">
 							<BsSpeedometer2 size={20} />
 							Dashboard
 						</Link>
 					</li>
 					<li
 						className={cn({
-							'bg-white shadow-sm': pathName === '/portfolio',
+							'bg-white shadow-sm': pathName === Router.Portfolio,
 						})}
 					>
-						<Link className="flex gap-5 items-center" href={'/portfolio'}>
+						<Link className="flex gap-5 items-center" href={Router.Portfolio}>
 							<LuLayers size={20} />
 							Portfolio
 						</Link>
 					</li>
 					<li
 						className={cn({
-							'bg-white shadow-sm': pathName === '/trade',
+							'bg-white shadow-sm': pathName === Router.Trade,
 						})}
 					>
-						<Link className="flex gap-5 items-center" href={'/trade'}>
+						<Link className="flex gap-5 items-center" href={Router.Trade}>
 							<PiArrowsLeftRight size={20} />
 							Trade
 						</Link>
 					</li>
 					<li
 						className={cn({
-							'bg-white shadow-sm': pathName === '/insight',
+							'bg-white shadow-sm': pathName === Router.Insight,
 						})}
 					>
-						<Link className="flex gap-5 items-center" href={'/insight'}>
+						<Link className="flex gap-5 items-center" href={Router.Insight}>
 							<BsBarChart size={20} />
 							Insight
 						</Link>
 					</li>
 					<li
 						className={cn({
-							'bg-white shadow-sm': pathName === '/reports',
+							'bg-white shadow-sm': pathName === Router.Reports,
 						})}
 					>
-						<Link className="flex gap-5 items-center" href={'/reports'}>
+						<Link className="flex gap-5 items-center" href={Router.Reports}>
 							<PiChartPieSlice size={20} />
 							Reports
 						</Link>

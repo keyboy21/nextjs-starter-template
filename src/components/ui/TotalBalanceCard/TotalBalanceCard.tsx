@@ -5,7 +5,7 @@ export const TotalBalanceCard = () => {
 			<Title className="mb-4">Total Balance</Title>
 			<Card>
 				<Flex className="gap-10">
-					<Flex className='items-end'>
+					<Flex className="items-end">
 						<Title>$</Title>
 						<Metric className="flex items-center">34,743</Metric>
 					</Flex>

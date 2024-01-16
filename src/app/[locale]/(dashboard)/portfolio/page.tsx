@@ -1,6 +1,6 @@
 import { Metric, Subtitle } from '@tremor/react';
 
-const PortfolioPage = () => {
+const PortfolioPage = async () => {
 	return (
 		<section>
 			<Metric>Portfolio</Metric>

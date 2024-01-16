@@ -2,7 +2,7 @@ import { TokenCard } from '@/components/ui/TokenCard';
 import { TotalBalanceCard } from '@/components/ui/TotalBalanceCard';
 import { Button, Grid, Metric, Subtitle } from '@tremor/react';
 
-export default function Home() {
+const DashboardPage = () => {
 	return (
 		<section>
 			<div className="flex justify-between items-center">
@@ -21,11 +21,13 @@ export default function Home() {
 			<div className="w-fit mt-5">
 				<TotalBalanceCard />
 			</div>
-			<Grid numItems={3} className="gap-6">
-				<TokenCard />
-				<TokenCard />
-				<TokenCard />
+			<Grid numItems={3} className="gap-6 mt-5">
+				<TokenCard categoryName="asd" />
+				<TokenCard categoryName="asd" />
+				<TokenCard categoryName="asd" />
 			</Grid>
 		</section>
 	);
-}
+};
+
+export default DashboardPage;

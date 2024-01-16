@@ -1,10 +1,8 @@
+import '@/styles/global.css';
+import { LayoutComponent } from '@/types/component.types';
+import { cn } from '@/utils/cn.util';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '@/styles/global.css';
-import { cn } from '@/utils/cn.util';
-import { Sidebar } from '@/components/layout/Sidebar';
-import { Header } from '@/components/layout/Header';
-import { LayoutComponent } from '@/types/component.types';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -19,16 +17,9 @@ const RootLayout: LayoutComponent = async ({
 	return (
 		<html lang={locale}>
 			<body
-				className={cn(
-					inter.className,
-					'bg-[#EEF1F6] text-balance antialiased',
-				)}
+				className={cn(inter.className, 'bg-[#EEF1F6] text-balance antialiased')}
 			>
-				<Header />
-				<div className="flex gap-7 mt-10 ">
-					<Sidebar />
-					<main className='w-full mr-7'>{children}</main>
-				</div>
+				{children}
 			</body>
 		</html>
 	);

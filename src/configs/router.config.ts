@@ -1,13 +1,13 @@
-import { Pathnames } from 'next-intl/navigation';
-
-// export const RouterConfig = {
-// 	Home: '/',
-// 	SpecVehicles: (id?: number) => (id ? `/specvehicles/${id}` : '/specvehicles'),
-// 	Factories: (id?: number) => (id ? `/factories/${id}` : '/factories'),
-// 	Projects: '/projects',
-// 	Services: '/service',
-// 	Contacts: '/contacts',
-// } as const;
+export const Router = {
+	Home: '/',
+	// SpecVehicles: (id?: number) => (id ? `/specvehicles/${id}` : '/specvehicles'),
+	// Factories: (id?: number) => (id ? `/factories/${id}` : '/factories'),
+	Portfolio: '/portfolio',
+	Trade: '/trade',
+	Insight: '/insight',
+	Reports: '/reports',
+	login: '/auth/login',
+} as const;
 
 // export const pathnames = {
 //     // If all locales use the same pathname, a

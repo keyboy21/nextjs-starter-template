@@ -1,1 +1,1 @@
-export {TotalBalanceCard} from './TotalBalanceCard'
+export { TotalBalanceCard } from './TotalBalanceCard';
