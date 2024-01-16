@@ -16,7 +16,6 @@
   "dependencies": {
     "@radix-ui/react-tabs": "^1.0.4",
     "@tremor/react": "^3.13.1",
-    "million": "^2.6.4",
     "next": "14.0.4",
     "next-auth": "^4.24.5",
     "next-intl": "^3.4.2",

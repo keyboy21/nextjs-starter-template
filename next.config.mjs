@@ -1,5 +1,3 @@
-import million from 'million/compiler';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
@@ -28,4 +26,3 @@ const millionConfig = {
 
 export default nextConfig;
 
-// export default million.next(nextConfig, millionConfig);
