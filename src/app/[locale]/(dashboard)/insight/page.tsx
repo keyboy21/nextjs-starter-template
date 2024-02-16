@@ -1,9 +1,10 @@
-import { Metric, Subtitle } from '@tremor/react';
-const InsightPage = async () => {
+import type { PageComponent } from '@/types/component.types';
+
+const InsightPage: PageComponent = async () => {
 	return (
 		<section>
-			<Metric>Insight</Metric>
-			<Subtitle>asdasdasdasdasdasdasdasd</Subtitle>
+			<h1>Insight</h1>
+			<p>asdasdasdasdasdasdasdasd</p>
 		</section>
 	);
 };

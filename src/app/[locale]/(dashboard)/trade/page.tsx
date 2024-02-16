@@ -1,10 +1,10 @@
-import { Metric, Subtitle } from '@tremor/react';
+import type { PageComponent } from '@/types/component.types';
 
-const TradePage = async () => {
+const TradePage: PageComponent = async () => {
 	return (
 		<section>
-			<Metric>TradePage</Metric>
-			<Subtitle>asdasdasdasdasdasdasdasd</Subtitle>
+			<h1>TradePage</h1>
+			<p>asdasdasdasdasdasdasdasd</p>
 		</section>
 	);
 };

@@ -1,37 +1,21 @@
 import { Pathnames } from 'next-intl/navigation';
 
-export const i18nConfig = {
-	defaultLocale: 'ru',
-	locales: ['ru', 'en'],
-};
-
-export const locales = ['ru', 'en'] as const;
-
+export const defaultLocale = 'ru' as const;
+export const locales = ['ru', 'en', 'uz'] as const;
+export const localePrefix = 'as-needed';
 export const pathnames = {
-	// If all locales use the same pathname, a
-	// single external path can be provided.
 	'/': '/',
-	'/portfolio': '/portfolio',
-	'/trade': '/trade',
 	'/insight': '/insight',
 	'/reports': '/reports',
+	'/trade': '/trade',
+	'/portfolio': '/portfolio',
 
-	// If locales use different paths, you can
-	// specify each external path per locale.
-	// '/about': {
-	//   en: '/about/[...slug]',
-	//   ru: '/ueber-uns'
+	//=============================================
+	// '/portfolio/[...slug]': {
+	// 	en: 'en/portfolio/[...slug]',
+	// 	ru: 'ru/portfolio/[...slug]',
+	// 	uz: 'uz/portfolio/[...slug]',
 	// },
+} satisfies Pathnames<typeof locales>;
 
-	// // Dynamic params are supported via square brackets
-	// '/news/[articleSlug]-[articleId]': {
-	//   en: '/news/[articleSlug]-[articleId]',
-	//   ru: '/neuigkeiten/[articleSlug]-[articleId]'
-	// },
-
-	// // Also (optional) catch-all segments are supported
-	// '/categories/[...slug]': {
-	//   en: '/categories/[...slug]',
-	//   ru: '/kategorien/[...slug]'
-	// }
-} satisfies Pathnames<typeof i18nConfig.locales>;
+export type AppPathnames = keyof typeof pathnames;

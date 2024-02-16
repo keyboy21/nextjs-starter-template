@@ -19,10 +19,4 @@ const nextConfig = {
 	},
 };
 
-const millionConfig = {
-	auto: { rsc: true },
-	mute: true,
-};
-
 export default nextConfig;
-
