@@ -9,29 +9,30 @@
 		"start": "next start",
 		"lint:next": "next lint",
 		"lint": "npx @biomejs/biome lint ./",
+		"lint:fix": "npx @biomejs/biome check --apply ./",
 		"check-types": "npx tsc --pretty --noEmit",
 		"format:check": "npx @biomejs/biome check ./",
 		"format": "npx @biomejs/biome format --write ./"
 	},
 	"dependencies": {
 		"@radix-ui/react-tabs": "^1.0.4",
-		"next": "14.1.0",
-		"next-auth": "^4.26.4",
-		"next-intl": "^3.7.0",
+		"next": "14.2.0",
+		"next-auth": "^4.24.6",
+		"next-intl": "^3.11.1",
 		"react": "^18",
 		"react-dom": "^18",
 		"react-icons": "^5.0.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.5.3",
+		"@biomejs/biome": "1.6.4",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
 		"autoprefixer": "^10.4.17",
 		"clsx": "^2.1.0",
 		"postcss": "^8",
-		"tailwind-merge": "^2.2.1",
-		"tailwindcss": "^3.4.1",
-		"typescript": "^5"
+		"tailwind-merge": "^2.2.2",
+		"tailwindcss": "^3.4.3",
+		"typescript": "^5.4.5"
 	}
 }

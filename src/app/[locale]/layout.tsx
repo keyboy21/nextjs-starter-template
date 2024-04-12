@@ -1,5 +1,5 @@
 import '@/styles/global.css';
-import { LayoutComponent } from '@/types/component.types';
+import type { LayoutComponent } from '@/types/component.types';
 import { cn } from '@/utils/cn.util';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';

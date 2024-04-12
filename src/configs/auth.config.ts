@@ -1,6 +1,6 @@
 import { BASE_URL } from '@/configs/env.config';
-import { NextAuthOptions } from 'next-auth';
-import { JWT } from 'next-auth/jwt';
+import type { NextAuthOptions } from 'next-auth';
+import type { JWT } from 'next-auth/jwt';
 import NextAuth from 'next-auth/next';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
@@ -32,9 +32,10 @@ export const authConfig: NextAuthOptions = {
 				},
 				password: { label: 'Password', type: 'password' },
 			},
-			async authorize(credentials, req) {
+			async authorize(credentials) {
 				if (!credentials?.email || !credentials?.password) return null;
 				const { email, password } = credentials;
+
 				const res = await fetch(`${BASE_URL}/auth/login`, {
 					method: 'POST',
 					body: JSON.stringify({
@@ -50,8 +51,9 @@ export const authConfig: NextAuthOptions = {
 
 					return null;
 				}
-				const user = await res.json();
-				return user;
+				const data = await res.json();
+
+				return data;
 			},
 		}),
 	],
@@ -65,16 +67,13 @@ export const authConfig: NextAuthOptions = {
 	callbacks: {
 		async jwt({ token, user }) {
 			if (user) return { ...token, ...user };
-
-			// if (new Date().getTime() < token.backendTokens.expiresIn)
-			// return token;
-
-			return await refreshToken(token);
+			if (new Date().getTime() < token.backendTokens.expiresIn) return token;
+			return token;
 		},
 
 		async session({ token, session }) {
-			session.user = token.user;
 			session.backendTokens = token.backendTokens;
+			session.user = token.user;
 
 			return session;
 		},

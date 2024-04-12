@@ -1,4 +1,4 @@
-import { Pathnames } from 'next-intl/navigation';
+import type { Pathnames } from 'next-intl/navigation';
 
 export const defaultLocale = 'ru' as const;
 export const locales = ['ru', 'en', 'uz'] as const;

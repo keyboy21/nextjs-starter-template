@@ -5,12 +5,12 @@ declare module 'next-auth' {
 		user: {
 			id: number;
 			email: string;
-			name: string;
+			name?: string;
 		};
 
 		backendTokens: {
 			accessToken: string;
-			//   refreshToken: string;
+			// refreshToken: string;
 			expiresIn: number;
 		};
 	}
@@ -23,12 +23,12 @@ declare module 'next-auth/jwt' {
 		user: {
 			id: number;
 			email: string;
-			name: string;
+			name?: string;
 		};
 
 		backendTokens: {
 			accessToken: string;
-			//   refreshToken: string;
+			// refreshToken: string;
 			expiresIn: number;
 		};
 	}

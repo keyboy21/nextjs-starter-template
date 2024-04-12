@@ -2,7 +2,7 @@
 
 import { Link, usePathname } from '@/navigation';
 import { cn } from '@/utils/cn.util';
-import { ComponentProps, FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 import { BsSpeedometer2 } from 'react-icons/bs';
 import { LuLayers } from 'react-icons/lu';
 import { PiArrowsLeftRight } from 'react-icons/pi';
