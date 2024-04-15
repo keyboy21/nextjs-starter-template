@@ -3,7 +3,7 @@ import { Link } from '@/navigation';
 import NextImage from 'next/image';
 import type { ComponentProps, FC } from 'react';
 import Logo from '../../../public/logo.webp';
-import { cn } from '@/utils/cn.util';
+import { cn } from '@/libs/cn.util';
 import { LangSwitch } from './LangSwitch';
 
 export const Header: FC<HeaderProps> = ({ className }) => {

@@ -1,8 +1,7 @@
 import { BASE_URL } from '@/configs/env.config';
-import type { NextAuthOptions } from 'next-auth';
+import NextAuth, { type NextAuthConfig } from 'next-auth';
 import type { JWT } from 'next-auth/jwt';
-import NextAuth from 'next-auth/next';
-import CredentialsProvider from 'next-auth/providers/credentials';
+import Credentials from 'next-auth/providers/credentials';
 
 async function refreshToken(token: JWT): Promise<JWT> {
 	const res = await fetch(`${BASE_URL}/auth/refresh`, {
@@ -21,9 +20,9 @@ async function refreshToken(token: JWT): Promise<JWT> {
 	};
 }
 
-export const authConfig: NextAuthOptions = {
+export const config = {
 	providers: [
-		CredentialsProvider({
+		Credentials({
 			name: 'Credentials',
 			credentials: {
 				email: {
@@ -62,7 +61,7 @@ export const authConfig: NextAuthOptions = {
 	},
 	session: {
 		strategy: 'jwt',
-		maxAge: 7 * 24 * 60 * 60,
+		maxAge: 86400,
 	},
 	callbacks: {
 		async jwt({ token, user }) {
@@ -73,13 +72,16 @@ export const authConfig: NextAuthOptions = {
 
 		async session({ token, session }) {
 			session.backendTokens = token.backendTokens;
-			session.user = token.user;
-
+			session.user = {
+				id: `${token.user.userid}`,
+				userid: token.user.userid,
+				email: token.user.email,
+				name: token.user.name,
+				emailVerified: new Date()
+			}
 			return session;
 		},
 	},
-};
+} satisfies NextAuthConfig;
 
-const handler = NextAuth(authConfig);
-
-export { handler as GET, handler as POST };
+export const { handlers, auth, signIn, signOut } = NextAuth(config);

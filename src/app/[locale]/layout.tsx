@@ -1,6 +1,6 @@
 import '@/styles/global.css';
 import type { LayoutComponent } from '@/types/component.types';
-import { cn } from '@/utils/cn.util';
+import { cn } from '@/libs/cn.util';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
@@ -19,7 +19,8 @@ const RootLayout: LayoutComponent = async ({
 			<body
 				className={cn(inter.className, 'bg-[#EEF1F6] text-balance antialiased')}
 			>
-				{children}
+				<h1>Root layout</h1>
+				<div className="border-4 border-blue-800">{children}</div>
 			</body>
 		</html>
 	);

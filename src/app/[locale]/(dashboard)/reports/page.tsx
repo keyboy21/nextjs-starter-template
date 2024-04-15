@@ -4,7 +4,6 @@ const ReportsPage: PageComponent = async () => {
 	return (
 		<section>
 			<h1>Reports</h1>
-			<p>asdasdasdasdasdasdasdasd</p>
 		</section>
 	);
 };

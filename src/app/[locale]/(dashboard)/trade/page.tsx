@@ -4,7 +4,6 @@ const TradePage: PageComponent = async () => {
 	return (
 		<section>
 			<h1>TradePage</h1>
-			<p>asdasdasdasdasdasdasdasd</p>
 		</section>
 	);
 };

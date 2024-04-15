@@ -3,7 +3,7 @@
 import * as React from 'react';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 
-import { cn } from '@/utils/cn.util';
+import { cn } from '@/libs/cn.util';
 
 const Tabs = TabsPrimitive.Root;
 

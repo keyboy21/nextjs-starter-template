@@ -1,7 +1,7 @@
 'use client';
 
 import { Link, usePathname } from '@/navigation';
-import { cn } from '@/utils/cn.util';
+import { cn } from '@/libs/cn.util';
 import type { ComponentProps, FC } from 'react';
 import { BsSpeedometer2 } from 'react-icons/bs';
 import { LuLayers } from 'react-icons/lu';

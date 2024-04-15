@@ -1,4 +1,4 @@
-import { cn } from '@/utils/cn.util';
+import { cn } from '@/libs/cn.util';
 import type { ComponentProps, FC } from 'react';
 
 export const Container: FC<ComponentProps<'div'>> = ({

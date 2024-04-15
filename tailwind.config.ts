@@ -1,101 +1,93 @@
 import type { Config } from 'tailwindcss';
-import colors from 'tailwindcss/colors';
 
 const config: Config = {
 	content: [
 		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
-		'./node_modules/@tremor/**/*.{js,ts,jsx,tsx}', // Tremor module
 	],
 	theme: {
-		transparent: 'transparent',
-		current: 'currentColor',
 		extend: {
 			colors: {
-				'default-border': '#D3D5DA',
-				// light mode
-				tremor: {
-					brand: {
-						faint: colors.blue[50],
-						muted: colors.blue[200],
-						subtle: colors.blue[400],
-						DEFAULT: colors.blue[500],
-						emphasis: colors.blue[700],
-						inverted: colors.white,
-					},
-					background: {
-						muted: colors.gray[50],
-						subtle: colors.gray[100],
-						DEFAULT: colors.white,
-						emphasis: colors.gray[700],
-					},
-					border: {
-						DEFAULT: colors.gray[50],
-					},
-					ring: {
-						DEFAULT: colors.gray[50],
-					},
-					content: {
-						subtle: colors.gray[400],
-						DEFAULT: colors.gray[500],
-						emphasis: colors.gray[700],
-						strong: colors.gray[900],
-						inverted: colors.white,
-					},
-				},
+				primary: '#7acbc1',
+				'primary-50': '#f3faf8',
+				'primary-100': '#d6f1ec',
+				'primary-200': '#ade2da',
+				/** Sadaf Original */
+				'primary-300': '#7acbc1',
+				'primary-400': '#51b0a7',
+				'primary-500': '#37958d',
+				'primary-600': '#2a7773',
+				'primary-700': '#25605d',
+				'primary-800': '#224d4c',
+				'primary-900': '#204140',
+				secondary: '#396cf0',
+				'secondary-50': '#eff4ff',
+				'secondary-100': '#dce7fd',
+				'secondary-200': '#c1d5fc',
+				'secondary-300': '#96bbfa',
+				'secondary-400': '#6496f6',
+				/** Secondary Original */
+				'secondary-500': '#396cf0',
+				'secondary-600': '#2b52e5',
+				'secondary-700': '#223fd3',
+				'secondary-800': '#2234ab',
+				'secondary-900': '#213287',
+				selago: '#f6f8fe',
+				/* Selago original */
+				'selago-50': '#f6f8fe',
+				'selago-100': '#dfe6fb',
+				'selago-200': '#c5d2f8',
+				'selago-300': '#9eb6f2',
+				'selago-400': '#6f90eb',
+				'selago-500': '#4e6ae3',
+				'selago-600': '#394cd7',
+				'selago-700': '#303bc5',
+				'selago-800': '#2c32a1',
+				'selago-900': '#292f7f',
+				alice: '#ebf0fd',
+				'alice-50': '#ebf0fd',
+				'alice-100': '#e3eafc',
+				'alice-200': '#ccd7f9',
+				'alice-300': '#adbcf4',
+				'alice-400': '#8c99ed',
+				'alice-500': '#7077e4',
+				'alice-600': '#5654d7',
+				'alice-700': '#4945bd',
+				'alice-800': '#3c3a99',
+				'alice-900': '#363779',
+				alebaster: '#efefef',
+				'alebaster-50': '#f8f8f8',
+				'alebaster-100': '#efefef',
+				'alebaster-200': '#e4e4e4',
+				'alebaster-300': '#d1d1d1',
+				'alebaster-400': '#b4b4b4',
+				'alebaster-500': '#9a9a9a',
+				'alebaster-600': '#818181',
+				'alebaster-700': '#6a6a6a',
+				'alebaster-800': '#5a5a5a',
+				'alebaster-900': '#4e4e4e',
+				nepal: '#95aac9',
+				'nepal-50': '#f4f7fa',
+				'nepal-100': '#e6ebf3',
+				'nepal-200': '#d4dce9',
+				'nepal-300': '#b6c5da',
+				'nepal-400': '#95aac9',
+				'nepal-500': '#788eb9',
+				'nepal-600': '#6678aa',
+				'nepal-700': '#5a689b',
+				'nepal-800': '#4d5780',
+				'nepal-900': '#414967',
 			},
 			boxShadow: {
-				// light
-				'tremor-input': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-				'tremor-card':
-					'0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-				'tremor-dropdown':
-					'0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-			},
-			borderRadius: {
-				'tremor-small': '0.375rem',
-				'tremor-default': '20px',
-				'tremor-full': '9999px',
-				'tremor-button': '8px',
-			},
-			fontSize: {
-				'tremor-label': '0.75rem',
-				'tremor-default': ['0.875rem', { lineHeight: '1.25rem' }],
-				'tremor-title': ['1.125rem', { lineHeight: '1.75rem' }],
-				'tremor-metric': ['1.875rem', { lineHeight: '2.25rem' }],
+				'element-focus': '0 0 0 0.3125rem',
+				'input-focus': '0 0 0 4px',
+				'elevation-1': '0 4px 7px rgb(0 0 0 / 15%)',
+				'elevation-2': '0 4px 10px rgb(0 0 0 / 25%)',
+				'elevation-3': '0 4px 25px rgb(0 0 0 / 25%)',
 			},
 		},
 	},
-	safelist: [
-		{
-			pattern:
-				/^(bg-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-			variants: ['hover', 'ui-selected'],
-		},
-		{
-			pattern:
-				/^(text-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-			variants: ['hover', 'ui-selected'],
-		},
-		{
-			pattern:
-				/^(border-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-			variants: ['hover', 'ui-selected'],
-		},
-		{
-			pattern:
-				/^(ring-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-		},
-		{
-			pattern:
-				/^(stroke-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-		},
-		{
-			pattern:
-				/^(fill-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-		},
-	],
 	darkMode: 'class',
 };
 export default config;
