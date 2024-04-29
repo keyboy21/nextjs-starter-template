@@ -1,6 +1,6 @@
+import { cn } from '@/libs/cn.util';
 import '@/styles/global.css';
 import type { LayoutComponent } from '@/types/component.types';
-import { cn } from '@/libs/cn.util';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });

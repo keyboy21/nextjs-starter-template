@@ -1,10 +1,5 @@
 'use client';
-
-import { Button } from '@/components/ui/Button';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-
+import { logIn } from '@/actions/LogIn';
 import {
 	Form,
 	FormControl,
@@ -13,7 +8,11 @@ import {
 	FormLabel,
 	FormMessage,
 } from '@/components/form/Form';
+import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Inputs/Input';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 const formSchema = z.object({
 	email: z
@@ -40,6 +39,7 @@ export function LoginForm() {
 		// Do something with the form values.
 		// ✅ This will be type-safe and validated.
 		console.log(values);
+		await logIn(values.email, values.password);
 	}
 
 	return (

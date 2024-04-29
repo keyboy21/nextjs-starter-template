@@ -1,5 +1,5 @@
-// import { auth } from '@/configs/auth.config';
-// import { redirect } from '@/navigation';
+import { auth } from '@/configs/auth.config';
+import { redirect } from '@/navigation';
 import type { PageComponent } from '@/types/component.types';
 
 const DashboardPage: PageComponent = async () => {

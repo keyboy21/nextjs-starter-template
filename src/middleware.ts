@@ -1,8 +1,8 @@
 import {
-	pathnames,
 	defaultLocale,
-	locales,
 	localePrefix,
+	locales,
+	pathnames,
 } from '@/configs/i18n.config';
 import createMiddleware from 'next-intl/middleware';
 
