@@ -1,14 +1,14 @@
 'use client';
 
-import { Link, usePathname } from '@/navigation';
+import { Router } from '@/configs/router.config';
 import { cn } from '@/libs/cn.util';
+import { Link, usePathname } from '@/navigation';
 import type { ComponentProps, FC } from 'react';
 import { BsSpeedometer2 } from 'react-icons/bs';
+import { BsBarChart } from 'react-icons/bs';
 import { LuLayers } from 'react-icons/lu';
 import { PiArrowsLeftRight } from 'react-icons/pi';
-import { BsBarChart } from 'react-icons/bs';
 import { PiChartPieSlice } from 'react-icons/pi';
-import { Router } from '@/configs/router.config';
 
 export const Sidebar: FC<SidebarPrps> = ({ className }) => {
 	const pathName = usePathname();
