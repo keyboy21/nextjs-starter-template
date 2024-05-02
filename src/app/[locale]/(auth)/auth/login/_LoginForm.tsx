@@ -19,26 +19,21 @@ const formSchema = z.object({
 		.string()
 		.min(1, { message: 'This field has to be filled.' })
 		.email('This is not a valid email.'),
-	password: z.string().min(6, {
+	password: z.string().min(8, {
 		message: 'Password must be at least 2 characters.',
 	}),
 });
 
 export function LoginForm() {
-	// 1. Define your form.
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
-			email: '',
-			password: '',
+			email: 'asd@gmail.com',
+			password: '1241asdasfasf',
 		},
 	});
 
-	// 2. Define a submit handler.
 	async function onSubmit(values: z.infer<typeof formSchema>) {
-		// Do something with the form values.
-		// ✅ This will be type-safe and validated.
-		console.log(values);
 		await logIn(values.email, values.password);
 	}
 

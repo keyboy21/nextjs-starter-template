@@ -1,6 +1,7 @@
 'use server';
-import { signIn } from '@/configs/auth.config';
+
+import { signIn } from '@/auth';
 
 export async function logIn(email: string, password: string) {
-	await signIn('credentials', { email, password });
+	await signIn('credentials', { email, password, redirectTo: '/' });
 }
