@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo '🏗️👷 Linting, formatting testing and building your project before committing'
+echo '🏗️👷 Linting and formatting project before committing'
 
 npx lint-staged
 
-echo '✅ All test passed. Commiting...'
+echo '✅ Commiting...'

@@ -2,10 +2,9 @@ import type { ReactNode } from 'react';
 
 const Authlayout = ({ children }: { children: ReactNode }) => {
 	return (
-		<main>
-			Authlayout
-			{children}
-		</main>
+		<body>
+			<main>{children}</main>
+		</body>
 	);
 };
 

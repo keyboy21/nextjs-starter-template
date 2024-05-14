@@ -1,9 +1,9 @@
 import { Router } from '@/configs/router.config';
-import { cn } from '@/libs/cn.util';
+import { cn } from '@/lib/utils';
 import { Link } from '@/navigation';
 import NextImage from 'next/image';
 import type { ComponentProps, FC } from 'react';
-import Logo from '../../../public/logo.webp';
+import Logo from '../../../../../public/logo.webp';
 import { LangSwitch } from './LangSwitch';
 
 export const Header: FC<HeaderProps> = ({ className }) => {

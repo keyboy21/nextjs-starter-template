@@ -1,5 +1,5 @@
 {
-	"name": "nextjs-example-template",
+	"name": "nextjs-template",
 	"version": "0.1.0",
 	"private": true,
 	"type": "module",
@@ -27,8 +27,8 @@
 		"@radix-ui/react-tabs": "^1.0.4",
 		"class-variance-authority": "^0.7.0",
 		"next": "14.2.3",
-		"next-auth": "^5.0.0-beta.17",
-		"next-intl": "^3.12.0",
+		"next-auth": "^5.0.0-beta.18",
+		"next-intl": "^3.13.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-hook-form": "^7.51.3",
@@ -37,8 +37,9 @@
 		"zod": "^3.23.4"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.7.1",
-		"@types/node": "^ 20.12.7",
+		"@biomejs/biome": "1.7.3",
+		"@total-typescript/ts-reset": "^0.5.1",
+		"@types/node": "^20.12.7",
 		"@types/react": "^18.3.1",
 		"@types/react-dom": "^18.3.0",
 		"autoprefixer": "^10.4.17",

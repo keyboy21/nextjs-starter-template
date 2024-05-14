@@ -1,7 +1,7 @@
 'use client';
 
 import { Router } from '@/configs/router.config';
-import { cn } from '@/libs/cn.util';
+import { cn } from '@/lib/utils';
 import { Link, usePathname } from '@/navigation';
 import type { ComponentProps, FC } from 'react';
 import { BsSpeedometer2 } from 'react-icons/bs';

@@ -1,4 +1,4 @@
-import { cn } from '@/libs/cn.util';
+import { cn } from '@/lib/utils';
 import type { HTMLAttributes } from 'react';
 
 export const Skeleton = ({

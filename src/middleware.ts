@@ -2,7 +2,7 @@ import {
 	defaultLocale,
 	localePrefix,
 	locales,
-	pathnames,
+	// pathnames,
 } from '@/configs/i18n.config';
 import createMiddleware from 'next-intl/middleware';
 
@@ -11,7 +11,7 @@ export default createMiddleware({
 	defaultLocale: defaultLocale,
 	localeDetection: false,
 	localePrefix: localePrefix,
-	pathnames: pathnames,
+	// pathnames: pathnames,
 });
 
 export const config = {
