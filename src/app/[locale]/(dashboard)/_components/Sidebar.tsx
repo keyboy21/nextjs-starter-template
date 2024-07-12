@@ -3,12 +3,8 @@
 import { Router } from '@/configs/router.config';
 import { cn } from '@/lib/utils';
 import { Link, usePathname } from '@/navigation';
+import { Gauge, Layers, ArrowLeftRight, BarChart4, PieChart } from 'lucide-react';
 import type { ComponentProps, FC } from 'react';
-import { BsSpeedometer2 } from 'react-icons/bs';
-import { BsBarChart } from 'react-icons/bs';
-import { LuLayers } from 'react-icons/lu';
-import { PiArrowsLeftRight } from 'react-icons/pi';
-import { PiChartPieSlice } from 'react-icons/pi';
 
 export const Sidebar: FC<SidebarPrps> = ({ className }) => {
 	const pathName = usePathname();
@@ -17,52 +13,63 @@ export const Sidebar: FC<SidebarPrps> = ({ className }) => {
 			<nav>
 				<ul className="flex flex-col gap-y-4 *:w-full *:rounded-lg *:p-3">
 					<li
-						className={cn({
-							'bg-white shadow-sm': pathName === Router.Home,
-						})}
+						className={cn(
+							'hover:bg-slate-300 transition-colors duration-500 cursor-pointer',
+							{
+								'bg-white shadow-sm  hover:bg-white': pathName === Router.Home,
+							})
+						}
 					>
 						<Link href={Router.Home} className="flex gap-5 items-center">
-							<BsSpeedometer2 size={20} />
+							<Gauge size={20} />
 							Dashboard
 						</Link>
 					</li>
 					<li
-						className={cn({
-							'bg-white shadow-sm': pathName === Router.Portfolio,
-						})}
+						className={cn(
+							'hover:bg-slate-300 transition-colors duration-500 cursor-pointer',
+							{
+								'bg-white shadow-sm  hover:bg-white': pathName === Router.Portfolio,
+							})}
 					>
 						<Link className="flex gap-5 items-center" href={Router.Portfolio}>
-							<LuLayers size={20} />
+							<Layers size={20} />
 							Portfolio
 						</Link>
 					</li>
 					<li
-						className={cn({
-							'bg-white shadow-sm': pathName === Router.Trade,
-						})}
+						className={cn(
+							'hover:bg-slate-300 transition-colors duration-500 cursor-pointer',
+							{
+								'bg-white shadow-sm  hover:bg-white': pathName === Router.Trade,
+							})}
 					>
 						<Link className="flex gap-5 items-center" href={Router.Trade}>
-							<PiArrowsLeftRight size={20} />
+							<ArrowLeftRight size={20} />
 							Trade
 						</Link>
 					</li>
 					<li
-						className={cn({
-							'bg-white shadow-sm': pathName === Router.Insight,
-						})}
+						className={cn(
+							'hover:bg-slate-300 transition-colors duration-500 cursor-pointer',
+							{
+								'bg-white shadow-sm  hover:bg-white': pathName === Router.Insight,
+							})}
 					>
 						<Link className="flex gap-5 items-center" href={Router.Insight}>
-							<BsBarChart size={20} />
+							<BarChart4 size={20} />
 							Insight
 						</Link>
 					</li>
 					<li
-						className={cn({
-							'bg-white shadow-sm': pathName === Router.Reports,
-						})}
+						className={cn(
+							'hover:bg-slate-300 transition-colors duration-500 cursor-pointer',
+							{
+								'bg-white shadow-sm  hover:bg-white': pathName === Router.Reports,
+							})}
 					>
 						<Link className="flex gap-5 items-center" href={Router.Reports}>
-							<PiChartPieSlice size={20} />
+							<PieChart size={20} />
 							Reports
 						</Link>
 					</li>
