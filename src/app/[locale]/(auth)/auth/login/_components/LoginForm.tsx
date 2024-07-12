@@ -1,5 +1,6 @@
 'use client';
 import { logIn } from '@/actions/LogIn';
+import { signInSchema } from '@/auth'
 import {
 	Form,
 	FormControl,
@@ -14,27 +15,18 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-const formSchema = z.object({
-	email: z
-		.string()
-		.min(1, { message: 'This field has to be filled.' })
-		.email('This is not a valid email.'),
-	password: z.string().min(8, {
-		message: 'Password must be at least 2 characters.',
-	}),
-});
-
 export function LoginForm() {
-	const form = useForm<z.infer<typeof formSchema>>({
-		resolver: zodResolver(formSchema),
+	const form = useForm<z.infer<typeof signInSchema>>({
+		resolver: zodResolver(signInSchema),
 		defaultValues: {
-			email: 'asd@gmail.com',
-			password: '1241asdasfasf',
+			userName: '',
+			password: '',
 		},
 	});
 
-	async function onSubmit(values: z.infer<typeof formSchema>) {
-		await logIn(values.email, values.password);
+	async function onSubmit(values: z.infer<typeof signInSchema>) {
+		console.log('onSubmit', values);
+		await logIn(values.userName, values.password);
 	}
 
 	return (
@@ -45,12 +37,12 @@ export function LoginForm() {
 			>
 				<FormField
 					control={form.control}
-					name="email"
+					name="userName"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>User Email</FormLabel>
+							<FormLabel>User Name</FormLabel>
 							<FormControl>
-								<Input placeholder="example@gmail.com" {...field} />
+								<Input placeholder="user" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -69,7 +61,7 @@ export function LoginForm() {
 						</FormItem>
 					)}
 				/>
-				<Button className="w-full" type="submit">
+				<Button variant='outline' className="w-full" type="submit">
 					Submit
 				</Button>
 			</form>

@@ -12,19 +12,20 @@ export const authConfig = {
 		jwt: async ({ token, user }) => {
 			if (user) {
 				token.userId = user.userId;
-				token.userType = user.userType;
 				token.accessToken = user.accessToken;
+				token.userName = user.userName;
+				// token.userType = user.userType;
 			}
 			return token;
 		},
-		session: ({ session, token }) => {
-			if (token) {
-				session.user.userId = token.userId;
-				session.user.userType = token.userType;
-				session.user.accessToken = token.accessToken;
-			}
-			return session;
-		},
+		// session: ({ session, token }) => {
+		// 	if (token) {
+		// 		session.user.userId = token.userId;
+		// 		session.user.accessToken = token.accessToken;
+		// 		// session.user.userType = token.userType;
+		// 	}
+		// 	return session;
+		// },
 	},
 	providers: [],
 } satisfies NextAuthConfig;
