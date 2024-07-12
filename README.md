@@ -44,10 +44,11 @@ In the project directory, you can run:
 | `dev`        | Runs the app in the development mode.                |
 | `build`      | Builds the app for production to the `.next` folder. |
 | `start`      | Runs the built app in the production mode.           |
-| `lint`       | Runs biome lint on the project.                       |
+| `lint`       | Checks if the code is linted with Biome.             |
+| `lint:fix`   | Runs biome lint on the project to fix errors.        |
 | `type-check` | Runs TypeScript type checker.                        |
-| `fmt`        | Formats the code with Biome.                      |
-| `fmt:check`  | Checks if the code is formatted with Biome.       |
+| `fmt`        | Formats the code with Biome.                         |
+| `fmt:check`  | Checks if the code is formatted with Biome.          |
 | `prepare`    | Installs husky git hooks.                            |
 
 ## After Installation Checklist

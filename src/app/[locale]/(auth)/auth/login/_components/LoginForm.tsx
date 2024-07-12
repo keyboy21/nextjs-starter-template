@@ -1,6 +1,5 @@
 'use client';
 import { logIn } from '@/actions/LogIn';
-import { signInSchema } from '@/auth'
 import {
 	Form,
 	FormControl,
@@ -11,20 +10,21 @@ import {
 } from '@/components/form/Form';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Inputs/Input';
+import { loginSchema } from '@/schemas/login.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 export function LoginForm() {
-	const form = useForm<z.infer<typeof signInSchema>>({
-		resolver: zodResolver(signInSchema),
+	const form = useForm<z.infer<typeof loginSchema>>({
+		resolver: zodResolver(loginSchema),
 		defaultValues: {
 			userName: '',
 			password: '',
 		},
 	});
 
-	async function onSubmit(values: z.infer<typeof signInSchema>) {
+	async function onSubmit(values: z.infer<typeof loginSchema>) {
 		console.log('onSubmit', values);
 		await logIn(values.userName, values.password);
 	}
@@ -61,7 +61,7 @@ export function LoginForm() {
 						</FormItem>
 					)}
 				/>
-				<Button variant='outline' className="w-full" type="submit">
+				<Button className="w-full" type="submit">
 					Submit
 				</Button>
 			</form>

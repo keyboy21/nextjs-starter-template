@@ -3,7 +3,7 @@ import type { NextAuthConfig } from 'next-auth';
 export const authConfig = {
 	session: {
 		strategy: 'jwt',
-		maxAge: 86400,
+		maxAge: 1 * 24 * 60 * 60,
 	},
 	pages: {
 		signIn: '/auth/login',
@@ -12,20 +12,19 @@ export const authConfig = {
 		jwt: async ({ token, user }) => {
 			if (user) {
 				token.userId = user.userId;
-				token.accessToken = user.accessToken;
 				token.userName = user.userName;
-				// token.userType = user.userType;
+				token.accessToken = user.accessToken;
 			}
 			return token;
 		},
-		// session: ({ session, token }) => {
-		// 	if (token) {
-		// 		session.user.userId = token.userId;
-		// 		session.user.accessToken = token.accessToken;
-		// 		// session.user.userType = token.userType;
-		// 	}
-		// 	return session;
-		// },
+		session: ({ session, token }) => {
+			if (token) {
+				session.user.userId = token.userId;
+				session.user.userName = token.userName;
+				session.user.accessToken = token.accessToken;
+			}
+			return session;
+		},
 	},
 	providers: [],
 } satisfies NextAuthConfig;

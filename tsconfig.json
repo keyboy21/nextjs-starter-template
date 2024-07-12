@@ -24,9 +24,8 @@
       "dom.iterable"
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": [ "./src/*" ],
+      "@public/*": [ "./public/*" ]
     },
     "plugins": [
       {
