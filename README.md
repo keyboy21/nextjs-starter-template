@@ -30,15 +30,9 @@ Under Construction 🚧
 ## Getting Started
 
 ```bash
-bun create next-app -e "https://github.com/yusuf-saydullayev/nextjs-starter-template" <project-name>
+bun create "https://github.com/yusuf-saydullayev/nextjs-starter-template" <project-name>
 
 npx create-next-app -e "https://github.com/yusuf-saydullayev/nextjs-starter-template" <project-name>
-```
-
-**Install dependencies**
-
-```bash
-bun i || pnpm i || yarn || npm i
 ```
 
 ## Available Scripts
