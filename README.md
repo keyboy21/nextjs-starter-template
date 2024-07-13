@@ -7,8 +7,6 @@
 
 # Next.js Starter Template
 
-### A Minimal Next.js Starter Template.
-
 </div>
 
 ## Features
@@ -18,9 +16,6 @@
 - 🎨 **[Tailwind CSS](https://tailwindcss.com/)** - A Utility-First CSS Framework for Rapid UI Development
 - 📦 **[TypeScript](https://www.typescriptlang.org/)** - A typed superset of JavaScript that compiles to plain JavaScript
 - 📝 **[Biome](https://biomejs.dev/)** - One toolchain for your web project
-- 🐶 **[Husky](https://typicode.github.io/husky/#/)** - A tool that makes Git hooks easy
-- 🚫 **[lint-staged](https://github.com/okonet/lint-staged)** - Run linters against staged git files
-- 📄 **[commitlint](https://commitlint.js.org/#/)** - Lint commit messages
 - 🌐 **[next-intl](https://next-intl-docs.vercel.app/)** with(shared pathname strategy) - Internationalization for Next.js
 
 Under Construction 🚧
@@ -49,7 +44,6 @@ In the project directory, you can run:
 | `type-check` | Runs TypeScript type checker.                        |
 | `fmt`        | Formats the code with Biome.                         |
 | `fmt:check`  | Checks if the code is formatted with Biome.          |
-| `prepare`    | Installs husky git hooks.                            |
 
 ## After Installation Checklist
 
