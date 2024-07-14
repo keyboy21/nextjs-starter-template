@@ -1,14 +1,14 @@
 'use client';
 
 import { Router } from '@/configs/router.config';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 import Logo from '@public/logo.webp';
 import NextImage from 'next/image';
-import type { ComponentProps, FC } from 'react';
+import type { ComponentProps, HTMLAttributes } from 'react';
 import { LangSwitch } from './LangSwitch';
 import { Link } from '@/navigation';
 
-export const Header: FC<HeaderProps> = ({ className }) => {
+export const Header = ({ className }: HeaderProps) => {
 	return (
 		<header className={cn('flex justify-between px-7 py-5', className)}>
 			<Link href={Router.Home} className="flex gap-3 items-center">
@@ -20,4 +20,4 @@ export const Header: FC<HeaderProps> = ({ className }) => {
 	);
 };
 
-type HeaderProps = ComponentProps<'header'>;
+interface HeaderProps extends ComponentProps<'aside'> { };

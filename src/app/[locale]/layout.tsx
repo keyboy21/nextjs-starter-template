@@ -1,6 +1,6 @@
 import { fontConfig } from '@/configs/font.config';
 import { locales } from '@/configs/i18n.config';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 import '@/styles/global.css';
 import type { LayoutComponent } from '@/types/component.types';
 import type { Metadata } from 'next';

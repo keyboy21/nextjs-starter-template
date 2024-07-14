@@ -1,12 +1,12 @@
 'use client';
 
 import { Router } from '@/configs/router.config';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 import { Link, usePathname } from '@/navigation';
 import { Gauge, Layers, ArrowLeftRight, BarChart4, PieChart } from 'lucide-react';
 import type { ComponentProps, FC } from 'react';
 
-export const Sidebar: FC<SidebarPrps> = ({ className }) => {
+export const Sidebar = ({ className }: SidebarPrps) => {
 	const pathName = usePathname();
 	return (
 		<aside className={cn('min-w-48 ml-7', className)}>
@@ -79,4 +79,4 @@ export const Sidebar: FC<SidebarPrps> = ({ className }) => {
 	);
 };
 
-type SidebarPrps = ComponentProps<'aside'>;
+interface SidebarPrps extends ComponentProps<'aside'> { }
