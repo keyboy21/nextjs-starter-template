@@ -3,7 +3,13 @@
 import { Router } from '@/configs/router.config';
 import { cn } from '@/utils/cn';
 import { Link, usePathname } from '@/navigation';
-import { Gauge, Layers, ArrowLeftRight, BarChart4, PieChart } from 'lucide-react';
+import {
+	Gauge,
+	Layers,
+	ArrowLeftRight,
+	BarChart4,
+	PieChart,
+} from 'lucide-react';
 import type { ComponentProps, FC } from 'react';
 
 export const Sidebar = ({ className }: SidebarPrps) => {
@@ -17,8 +23,8 @@ export const Sidebar = ({ className }: SidebarPrps) => {
 							'hover:bg-slate-300 transition-colors duration-500 cursor-pointer',
 							{
 								'bg-white shadow-sm  hover:bg-white': pathName === Router.Home,
-							})
-						}
+							},
+						)}
 					>
 						<Link href={Router.Home} className="flex gap-5 items-center">
 							<Gauge size={20} />
@@ -29,8 +35,10 @@ export const Sidebar = ({ className }: SidebarPrps) => {
 						className={cn(
 							'hover:bg-slate-300 transition-colors duration-500 cursor-pointer',
 							{
-								'bg-white shadow-sm  hover:bg-white': pathName === Router.Portfolio,
-							})}
+								'bg-white shadow-sm  hover:bg-white':
+									pathName === Router.Portfolio,
+							},
+						)}
 					>
 						<Link className="flex gap-5 items-center" href={Router.Portfolio}>
 							<Layers size={20} />
@@ -42,7 +50,8 @@ export const Sidebar = ({ className }: SidebarPrps) => {
 							'hover:bg-slate-300 transition-colors duration-500 cursor-pointer',
 							{
 								'bg-white shadow-sm  hover:bg-white': pathName === Router.Trade,
-							})}
+							},
+						)}
 					>
 						<Link className="flex gap-5 items-center" href={Router.Trade}>
 							<ArrowLeftRight size={20} />
@@ -53,8 +62,10 @@ export const Sidebar = ({ className }: SidebarPrps) => {
 						className={cn(
 							'hover:bg-slate-300 transition-colors duration-500 cursor-pointer',
 							{
-								'bg-white shadow-sm  hover:bg-white': pathName === Router.Insight,
-							})}
+								'bg-white shadow-sm  hover:bg-white':
+									pathName === Router.Insight,
+							},
+						)}
 					>
 						<Link className="flex gap-5 items-center" href={Router.Insight}>
 							<BarChart4 size={20} />
@@ -65,8 +76,10 @@ export const Sidebar = ({ className }: SidebarPrps) => {
 						className={cn(
 							'hover:bg-slate-300 transition-colors duration-500 cursor-pointer',
 							{
-								'bg-white shadow-sm  hover:bg-white': pathName === Router.Reports,
-							})}
+								'bg-white shadow-sm  hover:bg-white':
+									pathName === Router.Reports,
+							},
+						)}
 					>
 						<Link className="flex gap-5 items-center" href={Router.Reports}>
 							<PieChart size={20} />
@@ -79,4 +92,4 @@ export const Sidebar = ({ className }: SidebarPrps) => {
 	);
 };
 
-interface SidebarPrps extends ComponentProps<'aside'> { }
+interface SidebarPrps extends ComponentProps<'aside'> {}

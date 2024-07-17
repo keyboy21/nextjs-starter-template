@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export const generateStaticParams = async () => {
 	return locales.map((locale) => ({ locale }));
-}
+};
 
 const RootLayout: LayoutComponent = async ({
 	children,

@@ -20,4 +20,4 @@ export const Header = ({ className }: HeaderProps) => {
 	);
 };
 
-interface HeaderProps extends ComponentProps<'aside'> { };
+interface HeaderProps extends ComponentProps<'aside'> {}

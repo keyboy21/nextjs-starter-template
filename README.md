@@ -39,11 +39,12 @@ In the project directory, you can run:
 | `dev`        | Runs the app in the development mode.                |
 | `build`      | Builds the app for production to the `.next` folder. |
 | `start`      | Runs the built app in the production mode.           |
+| `clean`      | Removes the `.next dist node_modules ` folders.      |
 | `lint`       | Checks if the code is linted with Biome.             |
 | `lint:fix`   | Runs biome lint on the project to fix errors.        |
-| `type-check` | Runs TypeScript type checker.                        |
-| `fmt`        | Formats the code with Biome.                         |
-| `fmt:check`  | Checks if the code is formatted with Biome.          |
+| `fmt`        | Checks if the code is formatted with Biome.          |
+| `fmt:fix`    | Formats the code with Biome.                         |
+| `typecheck`  | Runs TypeScript type checker.                        |
 
 ## After Installation Checklist
 

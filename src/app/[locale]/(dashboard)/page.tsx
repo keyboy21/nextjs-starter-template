@@ -14,7 +14,7 @@ const DashboardPage: PageComponent = async () => {
 		<section>
 			<Heading>Dashboard Home page</Heading>
 			<Paragraph>Welcome</Paragraph>
-			<Paragraph className='text-'>
+			<Paragraph className="text-">
 				{Time('2022-02-02 22:22:22').format('YYYY-MM-DD')}
 			</Paragraph>
 			{/* <p>Id:{session?.user?.userId}</p>
