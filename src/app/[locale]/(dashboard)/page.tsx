@@ -2,10 +2,10 @@ import { auth } from '@/auth';
 import { Heading } from '@/components/ui/Heading';
 import { Paragraph } from '@/components/ui/Paragraph';
 import { redirect } from '@/navigation';
-import type { PageComponent } from '@/types/component.types';
+import type { PageType } from '@/types/component.types';
 import { Time } from '@/utils/time';
 
-const DashboardPage: PageComponent = async () => {
+const DashboardPage: PageType = async () => {
 	// const session = await auth();
 	// if (!session) {
 	// 	redirect('/auth/login');

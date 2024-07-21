@@ -1,20 +1,20 @@
+import type { locales } from '@/configs/i18n.config';
 import type { Metadata, ResolvingMetadata } from 'next';
 import type { FC, ReactNode } from 'react';
 
+type searchParams = { [key: string]: string | string[] | undefined };
 export interface ParamsWithLocale {
-	locale: string;
-	slug?: string;
+	locale: typeof locales[number];
 }
 
-export type PageComponent<
+export type PageType<
 	Params extends ParamsWithLocale = ParamsWithLocale,
-	SearchParams extends object = object,
-> = FC<{
-	params: Params;
-	searchParams: SearchParams;
-}>;
+	SearchParams = searchParams> = FC<{
+		params: Params;
+		searchParams?: SearchParams;
+	}>
 
-export type LayoutComponent<
+export type LayoutType<
 	Params extends ParamsWithLocale = ParamsWithLocale,
 > = FC<{
 	params: Params;

@@ -1,9 +1,8 @@
 import { Header } from '@/app/[locale]/(dashboard)/_components/Header';
 import { Sidebar } from '@/app/[locale]/(dashboard)/_components/Sidebar';
-import type { LayoutComponent } from '@/types/component.types';
-import type { ReactNode } from 'react';
+import type { LayoutType } from '@/types/component.types';
 
-const Dashboardlayout: LayoutComponent = async ({ children }) => {
+const Dashboardlayout: LayoutType = async ({ children }) => {
 	return (
 		<body className="bg-[#EEF1F6]">
 			<Header />
