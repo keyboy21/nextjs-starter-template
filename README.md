@@ -25,9 +25,9 @@ Under Construction 🚧
 ## Getting Started
 
 ```bash
-bun create "https://github.com/yusuf-saydullayev/nextjs-starter-template" <project-name>
+bun create "https://github.com/keyboy21/nextjs-starter-template" <project-name>
 
-npx create-next-app -e "https://github.com/yusuf-saydullayev/nextjs-starter-template" <project-name>
+npx create-next-app -e "https://github.com/keyboy21/nextjs-starter-template" <project-name>
 ```
 
 ## Available Scripts
