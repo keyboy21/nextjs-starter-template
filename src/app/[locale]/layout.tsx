@@ -2,7 +2,7 @@ import { fontConfig } from '@/configs/font.config';
 import { locales } from '@/configs/i18n.config';
 import { cn } from '@/utils/cn';
 import '@/styles/global.css';
-import type { LayoutComponent } from '@/types/component.types';
+import type { LayoutType } from '@/types/component.types';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const generateStaticParams = async () => {
 	return locales.map((locale) => ({ locale }));
 };
 
-const RootLayout: LayoutComponent = async ({
+const RootLayout: LayoutType = async ({
 	children,
 	params: { locale },
 }) => {
