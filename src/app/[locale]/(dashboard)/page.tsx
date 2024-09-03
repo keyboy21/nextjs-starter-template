@@ -1,9 +1,9 @@
 import { auth } from '@/auth';
 import { Heading } from '@/components/ui/Heading';
 import { Paragraph } from '@/components/ui/Paragraph';
+import { Time } from '@/lib/utils';
 import { redirect } from '@/navigation';
 import type { PageType } from '@/types/component.types';
-import { Time } from '@/utils/time';
 
 const DashboardPage: PageType = async () => {
 	// const session = await auth();

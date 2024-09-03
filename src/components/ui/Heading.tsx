@@ -1,5 +1,5 @@
-import type { FC, HTMLAttributes } from 'react';
-import { cn } from '@/utils/cn';
+import { cn } from '@/lib/utils';
+import type { HTMLAttributes } from 'react';
 
 export const Heading = ({
 	as = 'h1',

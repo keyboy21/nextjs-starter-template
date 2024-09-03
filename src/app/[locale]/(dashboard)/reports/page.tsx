@@ -1,6 +1,6 @@
-import type { PageComponent } from '@/types/component.types';
+import type { PageType } from '@/types/component.types';
 
-const ReportsPage: PageComponent = async () => {
+const ReportsPage: PageType = async () => {
 	return (
 		<section>
 			<h1>Reports</h1>

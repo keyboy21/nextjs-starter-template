@@ -1,12 +1,12 @@
 'use client';
 
 import { Router } from '@/configs/router.config';
-import { cn } from '@/utils/cn';
+import { cn } from '@/lib/utils';
+import { Link } from '@/navigation';
 import Logo from '@public/logo.webp';
 import NextImage from 'next/image';
 import type { ComponentProps, HTMLAttributes } from 'react';
 import { LangSwitch } from './LangSwitch';
-import { Link } from '@/navigation';
 
 export const Header = ({ className }: HeaderProps) => {
 	return (

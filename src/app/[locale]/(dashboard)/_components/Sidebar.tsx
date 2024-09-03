@@ -1,13 +1,13 @@
 'use client';
 
 import { Router } from '@/configs/router.config';
-import { cn } from '@/utils/cn';
+import { cn } from '@/lib/utils';
 import { Link, usePathname } from '@/navigation';
 import {
-	Gauge,
-	Layers,
 	ArrowLeftRight,
 	BarChart4,
+	Gauge,
+	Layers,
 	PieChart,
 } from 'lucide-react';
 import type { ComponentProps, FC } from 'react';
