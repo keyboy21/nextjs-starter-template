@@ -1,79 +1,52 @@
 import { BASE_URL } from '@/configs/env.config';
-import NextAuth, { type User } from 'next-auth';
+import NextAuth from 'next-auth';
 import type { JWT } from 'next-auth/jwt';
 import Credentials from 'next-auth/providers/credentials';
-import { authConfig } from './configs/auth.config';
-// import { loginSchema } from './schemas/Login.schema';
+import { authConfig } from '@/configs/auth.config';
+import { loginSchema } from '@/schemas/login.schema';
+import type { User } from '@/types/user.type';
+import { logIn } from './api/auth/logIn.api';
 
 export const config = {
 	...authConfig,
 	providers: [
 		Credentials({
-			name: 'Credentials',
 			credentials: {
-				userName: {
+				username: {
 					label: 'User Name',
 					type: 'username',
 				},
 				password: { label: 'Password', type: 'password' },
 			},
 			async authorize(credentials) {
-				// const { userName, password } =
-				// 	await loginSchema.parseAsync(credentials);
 
-				// const res = await fetch(`${BASE_URL}/auth/login`, {
-				// 	method: 'POST',
-				// 	body: JSON.stringify({
-				// 		userName,
-				// 		password,
-				// 	}),
-				// 	headers: {
-				// 		'Content-Type': 'application/json',
-				// 	},
-				// });
+				const { userName, password } = await loginSchema.parseAsync(credentials);
 
-				// if (!res.ok) {
-				// 	console.log(res.statusText);
-				// 	throw new Error('Login failed');
-				// }
+				const res = await logIn(userName, password);
 
-				// const data = (await res.json()) as LoginResponse;
+				if (!res) {
+					throw new Error('Login failed');
+				}
 
-				// console.log('login response', data);
-
-				// const { accessToken, refreshToken } = data;
-
-				// const decodedToken = await decode({
-				// 	token: accessToken,
-				// 	secret: 'secret',
-				// 	salt: 'salt',
-				// });
-
-				// if (!user) {
-				// 	throw new Error('User not found.');
-				// }
-				// console.log('decodedToken', decodedToken);
-
-				const user: User = {
-					userId: 2,
-					userName: 'User name getting from jwt token',
-					accessToken: 'Backend acces token here',
-					// email: 'User email getting from jwt token',
-					// image: 'User image getting from jwt token',
+				const User: User = {
+					id: `${res.id}`,
+					userName: res.userName,
+					firstName: res.firstName,
+					lastName: res.lastName,
+					gender: res.gender,
+					email: res.email,
+					image: res.image,
+					token: res.token,
+					refreshToken: res.refreshToken,
 				};
 
-				return user;
+				return User;
 			},
 		}),
 	],
 };
 
 export const { handlers, auth, signIn, signOut } = NextAuth(config);
-
-export interface LoginResponse {
-	refreshToken: string;
-	accessToken: string;
-}
 
 async function refreshToken(token: JWT): Promise<JWT> {
 	const res = await fetch(`${BASE_URL}/auth/refresh`, {

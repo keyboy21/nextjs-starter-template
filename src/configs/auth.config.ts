@@ -11,20 +11,35 @@ export const authConfig = {
 	callbacks: {
 		jwt: async ({ token, user }) => {
 			if (user) {
-				token.userId = user.userId;
+				token.userId = user.id;
 				token.userName = user.userName;
-				token.accessToken = user.accessToken;
+				token.token = user.token;
+				token.firstName = user.firstName;
+				token.lastName = user.lastName;
+				token.email = user.email ?? '';
+				token.gender = user.gender;
+				token.image = user.image ?? '';
+				token.refreshToken = user.refreshToken;
 			}
 			return token;
 		},
 		session: ({ session, token }) => {
 			if (token) {
-				session.user.userId = token.userId;
+				session.user.id = token.id;
 				session.user.userName = token.userName;
-				session.user.accessToken = token.accessToken;
+				session.user.refreshToken = token.refreshToken;
+				session.user.token = token.token;
+				session.user.firstName = token.firstName;
+				session.user.lastName = token.lastName;
+				session.user.email = token.email;
+				session.user.gender = token.gender;
+				session.user.image = token.image;
 			}
 			return session;
 		},
+		authorized({ auth }) {
+			return !!auth;
+		}
 	},
 	providers: [],
 } satisfies NextAuthConfig;
