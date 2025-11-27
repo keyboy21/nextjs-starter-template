@@ -1,2 +1,6 @@
-import { Inter } from 'next/font/google';
-export const fontConfig = Inter({ subsets: ['latin'] });
+import { Inter } from "next/font/google";
+
+export const FontConfig = Inter({
+	weight: ["200", "300", "400", "500", "600", "700", "800"],
+	subsets: ["latin", "cyrillic"],
+});

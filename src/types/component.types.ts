@@ -1,44 +1,37 @@
-import type { locales } from '@/configs/i18n.config';
-import type { Metadata, ResolvingMetadata } from 'next';
-import type { FC, ReactNode } from 'react';
+import type { Metadata, ResolvingMetadata } from "next";
+import type { Locale } from "next-intl";
+import type { FC, ReactNode } from "react";
 
-type searchParams = { [key: string]: string | string[] | undefined };
+type SearchParams = { [key: string]: string | string[] | undefined };
 export interface ParamsWithLocale {
-	locale: (typeof locales)[number];
+	locale: Locale;
+	[key: string]: string;
 }
 
-export type PageType<
-	Params extends ParamsWithLocale = ParamsWithLocale,
-	SearchParams = searchParams,
-> = FC<{
-	params: Params;
-	searchParams?: SearchParams;
-}>;
+export interface PageProps<Params extends ParamsWithLocale = ParamsWithLocale> {
+	params: Promise<Params>;
+	searchParams: Promise<SearchParams>;
+}
 
-export type LayoutType<Params extends ParamsWithLocale = ParamsWithLocale> =
-	FC<{
-		params: Params;
-		children: ReactNode;
-	}>;
+export interface LayoutProps<
+	Params extends ParamsWithLocale = ParamsWithLocale,
+> {
+	params: Params;
+	children: ReactNode;
+}
 
 export type ErrorRouteComponent = FC<{
 	error: Error;
 	reset: () => void;
 }>;
 
-export type RenderBehavior =
-	| 'auto'
-	| 'force-dynamic'
-	| 'error'
-	| 'force-static';
-
 export type DynamicMetadata<
 	Params extends ParamsWithLocale = ParamsWithLocale,
 	SearchParams extends object = object,
 > = (
 	params: {
-		params: Params;
-		searchParams: SearchParams;
+		params: Promise<Params>;
+		searchParams: Promise<SearchParams>;
 	},
 	parent: ResolvingMetadata,
 ) => Promise<Metadata> | Metadata;
