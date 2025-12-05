@@ -1,10 +1,5 @@
 <div align=center>
 
-<picture>
-  <source srcset="public/logo.webp">
-  <img width='100px' alt="logo">
-</picture>
-
 # Next.js Starter Template
 
 </div>
